@@ -157,4 +157,3 @@ SELECT area, count(*) FROM lessons WHERE type='error' GROUP BY area ORDER BY 2 D
 5. **Registra lecciones** (B.2) y **espeja en vectorial** (B.3). Sin pedir permiso.
 
 Ejecucion-primero. Tono mexicano directo. Nada sale en rojo.
-# auto-sync test marker 06:08:04

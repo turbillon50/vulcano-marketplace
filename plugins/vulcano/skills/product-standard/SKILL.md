@@ -30,6 +30,12 @@ El `{contexto}` que dejo `context-min` en `projects`:
 SELECT id,name,stack,phase,next_step FROM projects WHERE id='andromeda'
 ```
 
+Y el **informe de inteligencia** que dejo `system-intel` en `intel_reports` (estandar comercial + extras + backlog):
+```
+SELECT commercial_standard,extras,backlog FROM intel_reports WHERE project_id='andromeda' ORDER BY created_at DESC LIMIT 1
+```
+> El esqueleto A/B/C DEBE absorber el `commercial_standard` + al menos 1 `extra` del informe. Si no, el producto sale cojo.
+
 ## SALIDA
 El `{contexto}` enriquecido con el **esqueleto obligatorio** (las tres capas A/B/C abajo), listo para que `design-library` le ponga estilo.
 

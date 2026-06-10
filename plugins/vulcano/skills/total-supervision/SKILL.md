@@ -1,6 +1,6 @@
 ---
 name: total-supervision
-description: Supervision Total de la FABRICA — el modulo MAS IMPORTANTE. Equipo profesional de testers + corrector en LOOP CONTINUO. Une las dos mitades que ya existen: qa-crew (recorre TODA la app en celular 390/768 y escritorio 1440: navegacion, los 3 modos, scroll real, carruseles, imagenes rotas, nav sin overlays, responsive) como PROBADOR, y el reintento dirigido del Nucleo Esferico (/root/forge-labs/, nucleo_v2.py) como CORRECTOR. Loop: recorrer -> detectar fallas -> mandar al corrector -> re-verificar -> repetir HASTA VERDE en ambos tamanos. No para hasta que todo funcione. ACTIVAR cuando el usuario diga "supervisa", "revisa todo", "antes de entregar", "esta lista", "QA total", "supervision", "total-supervision", "ponla a prueba", "no para hasta que jale", "loop de correccion", o al cierre de cualquier build. CUARTO y ultimo modulo del pipeline (context-min -> product-standard -> design-library -> total-supervision).
+description: Supervision Total de la FABRICA — el modulo MAS IMPORTANTE. Equipo profesional de testers + corrector en LOOP CONTINUO. Une las dos mitades que ya existen: qa-crew (recorre TODA la app en celular 390/768 y escritorio 1440: navegacion, los 3 modos, scroll real, carruseles, imagenes rotas, nav sin overlays, responsive) como PROBADOR, y el reintento dirigido del Nucleo Esferico (/root/forge-labs/, nucleo_v2.py) como CORRECTOR. Loop: recorrer -> detectar fallas -> mandar al corrector -> re-verificar -> repetir HASTA VERDE en ambos tamanos. No para hasta que todo funcione. ACTIVAR cuando el usuario diga "supervisa", "revisa todo", "antes de entregar", "esta lista", "QA total", "supervision", "total-supervision", "ponla a prueba", "no para hasta que jale", "loop de correccion", o al cierre de cualquier build. CUARTO y ultimo modulo del pipeline (context-min -> system-intel -> product-standard -> design-library -> total-supervision).
 version: 1.0
 agents: [Vulcano, qa-crew, nucleo-esferico]
 triggers: [supervisa, revisa todo, antes de entregar, esta lista, QA total, supervision, total-supervision, ponla a prueba, no para hasta que jale, loop de correccion]
@@ -104,7 +104,7 @@ VALUES ('andromeda','win','supervision','loop probador+corrector llevo a verde e
 ## HANDOFF / PIPELINE
 
 ```
-context-min -> product-standard -> design-library -> [total-supervision: loop hasta verde] -> ENTREGA
+context-min -> system-intel -> product-standard -> design-library -> [total-supervision: loop hasta verde] -> ENTREGA
 ```
 
 - **Consume** el producto vestido (ficha de diseno + esqueleto + contexto).

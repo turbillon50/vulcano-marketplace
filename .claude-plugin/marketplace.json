@@ -3,14 +3,14 @@
   "owner": { "name": "Luis de la Torre", "email": "dluisdelatorre@gmail.com" },
   "metadata": {
     "description": "Marketplace de Vulcano -- todas las skills de Luis como un plugin instalable.",
-    "version": "0.1.4"
+    "version": "0.1.5"
   },
   "plugins": [
     {
       "name": "vulcano",
       "source": "./plugins/vulcano",
       "description": "Todas las skills de Luis: infra, demos, neon-brain, sync-protocol, turbo-boot, secret-injector, Higgsfield, qa-crew y mas.",
-      "version": "0.1.4"
+      "version": "0.1.5"
     }
   ]
 }

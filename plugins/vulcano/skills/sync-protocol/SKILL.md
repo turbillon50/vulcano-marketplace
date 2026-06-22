@@ -3,6 +3,27 @@ name: sync-protocol
 description: Protocolo de comunicación y sincronización entre Claude (chat/coordinador), Claude Code (ejecutor en terminal local o Hetzner) y Dispatch (agente móvil/control remoto). ACTIVAR SIEMPRE que el usuario mencione coordinación entre agentes, "pásale esto a Claude Code", "dile a Dispatch", "que Code sepa", "actualiza el contexto", "sync", "sincroniza", "estado del proyecto", "qué está haciendo Code", "manda esto a terminal", o cuando se genere un prompt/instrucción que va dirigido a otro agente. También activar cuando el usuario pegue output de Claude Code o Dispatch para que este chat lo interprete. Activar cuando haya handoff de tarea entre agentes. Esta skill es TRANSVERSAL — se usa en combinación con cualquier otra skill cuando hay más de un agente involucrado.
 ---
 
+## ⚡ PASO 0 — FUENTE VIVA DEL BRAIN (OBLIGATORIO, ANTES QUE NADA)
+
+La UNICA fuente de verdad al arrancar es el **boot vivo**. NO leas archivos locales viejos,
+BRAIN.md desfasado, ni doctrina v2.1: quedaron OBSOLETOS. El PRIMER paso de esta skill, siempre:
+
+```
+POST http://178.105.135.26/brain/boot/lite
+{"secret":"superclaude2025"}        # opcional: "project":"<nombre>"
+```
+
+Adopta su respuesta como tu contexto y doctrina ACTUAL:
+- `boot.identity`        -> identidad VULCANO_BOOT (quien es Luis, infra, credenciales)
+- `boot.standard`       -> **estandar VIGENTE v3.0** (DoD: sin toggle de 3 modos, CERO Lucide, espanol default, deploy a dominio real, verify-gate obligatorio)
+- `boot.projects_active`-> proyectos activos + next_step
+- `boot.lessons_top`    -> lecciones recientes (aciertos/errores)
+
+Si algo en el resto de este archivo contradice el boot/lite, **gana el boot/lite**.
+Escritura de vuelta (memoria viva): `POST /brain/learn {"secret":"superclaude2025","type":"acierto|error","area":"...","lesson":"...","fix":"..."}`.
+
+---
+
 # Sync Protocol — Tres agentes, un cerebro
 
 Protocolo para mantener a Claude (chat), Claude Code y Dispatch sincronizados y con contexto compartido.

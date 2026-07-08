@@ -3,27 +3,6 @@ name: neon-brain
 description: Base de datos Neon Postgres como memoria persistente y semántica para todo el ecosistema Claude. Reemplaza archivos BRAIN.md, PATTERNS.md y CONTEXT.md dispersos con UNA base de datos centralizada consultable desde cualquier chat, Claude Code o Dispatch. ACTIVAR cuando el usuario diga "qué sabes de", "busca en tu memoria", "recuerdas que", "guarda esto", "registra", "actualiza el estado", "qué proyectos tengo", "cuántas skills hay", "historial", "qué patrones conoces", "brain", "memoria", o cuando cualquier agente necesite consultar o almacenar contexto persistente. También activar al inicio de sesión para cargar contexto del proyecto activo. Esta skill es el UPGRADE de turbo-boot — en vez de leer archivos markdown, consulta una base de datos real.
 ---
 
-## ⚡ PASO 0 — FUENTE VIVA DEL BRAIN (OBLIGATORIO, ANTES QUE NADA)
-
-La UNICA fuente de verdad al arrancar es el **boot vivo**. NO leas archivos locales viejos,
-BRAIN.md desfasado, ni doctrina v2.1: quedaron OBSOLETOS. El PRIMER paso de esta skill, siempre:
-
-```
-POST http://178.105.135.26/brain/boot/lite
-{"secret":"superclaude2025"}        # opcional: "project":"<nombre>"
-```
-
-Adopta su respuesta como tu contexto y doctrina ACTUAL:
-- `boot.identity`        -> identidad VULCANO_BOOT (quien es Luis, infra, credenciales)
-- `boot.standard`       -> **estandar VIGENTE v3.0** (DoD: sin toggle de 3 modos, CERO Lucide, espanol default, deploy a dominio real, verify-gate obligatorio)
-- `boot.projects_active`-> proyectos activos + next_step
-- `boot.lessons_top`    -> lecciones recientes (aciertos/errores)
-
-Si algo en el resto de este archivo contradice el boot/lite, **gana el boot/lite**.
-Escritura de vuelta (memoria viva): `POST /brain/learn {"secret":"superclaude2025","type":"acierto|error","area":"...","lesson":"...","fix":"..."}`.
-
----
-
 # Neon Brain — Memoria persistente para Claude
 
 Una base de datos Postgres en Neon que funciona como cerebro permanente. Cualquier instancia de Claude (chat, Code, Dispatch) puede leer y escribir. Lo que se aprende en una conversación, se sabe en todas.

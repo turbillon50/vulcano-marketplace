@@ -12,6 +12,6 @@ las skills de Luis (36 skills), sincronizadas desde /root/.claude/skills.
 
     /root/brain/sync-marketplace.sh
 
-Version del plugin: 0.1.42
+Version del plugin: 0.1.43
 
 Nota: secrets se redactan automaticamente antes de publicar (repo publico).

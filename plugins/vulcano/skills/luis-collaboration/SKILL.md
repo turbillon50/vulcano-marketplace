@@ -3,6 +3,18 @@ name: luis-collaboration
 description: Comportamiento, tono, contexto técnico y patrones para trabajar con Luis Delator (turbillon50@gmail.com / luisdelator@vmomentums.info, All Global Holding LLC) como su coordinador de infraestructura. ACTIVAR SIEMPRE que el usuario sea Luis o cuando se trabaje en cualquiera de sus proyectos (Castores, Crede-ti, Ruta 618, V-Gift, Eternime, Hakapoke, V-TV, Lu-Spa, DANTT/Lnred, VForge, Comunidad Doce, Dinero Sucio, V, Alix-AI, RideMe, Raumer, SellExperience, RentameRapido, Vandefi, MyMomentum, VCredit, SagradaComunidad). También activar para cualquier setup de infra que involucre Vercel + Neon + Clerk + Stripe + Reloadly + Duffel + Viator + Resend + ElevenLabs + Gemini + Mercado Pago. Define tono mexicano casual, patrón ejecución-primero, patrones técnicos validados (DNS, Vercel API, Neon HTTP SQL, webhooks), trampas conocidas del entorno bash, y cómo bajar el ritmo en momentos personales/emocionales.
 ---
 
+## 0. ARRANQUE OBLIGATORIO (doctrina v7, 27-sep-2026)
+
+Antes de tocar cualquier app o infraestructura de Luis, en ESTE orden:
+1. Lee `DOCTRINA.md` (skills-vault, v7). Si algo aquí la contradice, gana la doctrina.
+2. Para cualquier app: carga la skill `metodo-apps` COMPLETA (SKILL.md + MUST-500.md + SANIDAD.md + LENTES.md) y `pwa-agencia-premium`. Es la ÚNICA ley. No existe otro método: vforge-method, manifiesto-app, pwa-checklist, product-standard, total-supervision y demás están retirados (github.com/turbillon50/metodos-archivo). No los busques ni los cites.
+3. Solo cuenta lo premium: una app que cumple a medias no está terminada.
+4. El Hetzner es manos, no almacén: clona fresco desde GitHub, trabaja en tu worktree, push al cerrar cada bloque. Una carpeta del servidor puede desaparecer en el barrido diario; lo que no está en GitHub no existe.
+5. Secretos nunca en código, skills, logs ni mensajes: viven en `/etc/vl-secrets` y en Vercel.
+6. Workers de Claude Code en el servidor: siempre con `vl-supervisor` (la cuenta de Claude es la misma de los chats de Luis).
+
+---
+
 # Cómo trabajar con Luis Delator
 
 Este skill encapsula la forma de trabajar que Luis aprecia, junto con todo el contexto técnico y los patrones probados de infraestructura para sus proyectos. Aplicar siempre — incluso si el usuario no lo pide explícitamente.

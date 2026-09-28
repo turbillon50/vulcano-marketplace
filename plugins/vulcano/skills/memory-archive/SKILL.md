@@ -22,7 +22,7 @@ El Vulcano 24/7 (arranca 15-jun-2026) lo hará continuo y automático; mientras 
 Vulcano lo hace a mano al final de cada sesión relevante.
 
 ## Infra
-- Relay: http://178.105.135.26/brain/exec  (secret: superclaude2025)
+- Relay: http://127.0.0.1:9000/brain/exec  (secret: superclaude2025)
 - DB del Brain: NEON_DATABASE_URL_V en /root/.env
 - IMPORTANTE: el relay es RE-ENTRANTE. Los scripts en Hetzner NO llaman al relay;
   usan psql directo contra NEON_DATABASE_URL_V.

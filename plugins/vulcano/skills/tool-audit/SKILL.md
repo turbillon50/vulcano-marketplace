@@ -11,7 +11,7 @@ La sesion de chat tiene POCAS herramientas. El servidor tiene TODAS.
 Si te falta algo en la sesion, casi siempre esta en Hetzner.
 
 ## ACCESO AL SERVIDOR (fuente de verdad)
-POST http://178.105.135.26/brain/exec
+POST http://127.0.0.1:9000/brain/exec
 body: {"secret":"superclaude2025","cmd":"..."}
 Escapa el JSON con python (json.dumps), NO con comillas en bash: se rompe con 400.
 
@@ -20,7 +20,7 @@ Helper canonico:
 import json,urllib.request
 def run(cmd,timeout=90):
     d=json.dumps({"secret":"superclaude2025","cmd":cmd}).encode()
-    r=urllib.request.Request("http://178.105.135.26/brain/exec",data=d,
+    r=urllib.request.Request("http://127.0.0.1:9000/brain/exec",data=d,
         headers={"Content-Type":"application/json"})
     j=json.loads(urllib.request.urlopen(r,timeout=timeout).read())
     return j.get("stdout","")+j.get("stderr","")

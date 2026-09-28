@@ -90,7 +90,7 @@ WHERE user_id = 'turbillon50'
 Si Claude no puede conectar directo a Neon, usar el relay de Hetzner:
 
 ```bash
-curl -X POST http://178.105.135.26/brain/query \
+curl -X POST http://127.0.0.1:9000/brain/query \
   -H "Content-Type: application/json" \
   -d '{
     "secret": "superclaude2025",

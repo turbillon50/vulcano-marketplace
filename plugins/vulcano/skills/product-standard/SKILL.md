@@ -17,8 +17,8 @@ Segundo eslabon de la FABRICA. Toma el `{contexto}` de **context-min** y le inye
 ## Conexion al Brain
 
 ```
-Relay exec (bash):  POST http://178.105.135.26/brain/exec   body {"secret":"superclaude2025","cmd":"..."}
-Relay query (SQL):  POST http://178.105.135.26/brain/query  body {"secret":"superclaude2025","query":"..."}
+Relay exec (bash):  POST http://127.0.0.1:9000/brain/exec   body {"secret":"superclaude2025","cmd":"..."}
+Relay query (SQL):  POST http://127.0.0.1:9000/brain/query  body {"secret":"superclaude2025","query":"..."}
 ```
 Una sentencia SQL por query. Relay re-entrante: scripts en Hetzner NO llaman al relay.
 

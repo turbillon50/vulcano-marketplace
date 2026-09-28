@@ -18,8 +18,8 @@ Dos capacidades en una skill:
 ## Conexion al Brain
 
 ```
-Relay exec (bash):   POST http://127.0.0.1:9000/brain/exec    body {"secret":"superclaude2025","cmd":"..."}
-Relay query (SQL):   POST http://127.0.0.1:9000/brain/query   body {"secret":"superclaude2025","query":"..."}
+Relay exec (bash):   POST http://127.0.0.1:9000/brain/exec    body {"secret":"<SECRETO_LOCAL>","cmd":"..."}
+Relay query (SQL):   POST http://127.0.0.1:9000/brain/query   body {"secret":"<SECRETO_LOCAL>","query":"..."}
 ```
 
 **REGLAS DURAS:**

@@ -17,7 +17,7 @@ falta=""
 for f in ../hyperframes/scripts/lib/frame-packets-core.mjs \
          ../hyperframes-animation \
          ../hyperframes/references/frame-worker-core.md; do
-  [ -e "$D/scripts/$f" ] || falta="$falta $f"
+  [ -e "$D/$f" ] || falta="$falta $f"
 done
 [ -z "$falta" ] && ok "core + animation + frame-worker-core al lado" || falla "faltan:$falta (la skill se copio sola, sin sus hermanas)"
 

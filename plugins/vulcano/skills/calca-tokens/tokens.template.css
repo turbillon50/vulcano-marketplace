@@ -1,0 +1,67 @@
+/* tokens.css — LA REJILLA DE LA CALCA
+   Los valores se llenan midendo la referencia aprobada (calca.py medir).
+   Prohibido inventar: si no está en la referencia, se diseña con Luis.
+   Escalas y roles fijos: ver skill calca-tokens. */
+
+:root {
+  /* ── Color (roles; hex desde la referencia) ── */
+  --color-bg:            #08080c;  /* ← de la referencia */
+  --color-surface:       #101018;
+  --color-surface-2:     #181824;
+  --color-border:        rgb(255 255 255 / 8%);
+  --color-border-strong: rgb(255 255 255 / 16%);
+  --color-text:          #f2f2f7;
+  --color-text-2:        rgb(242 242 247 / 64%);
+  --color-text-muted:    rgb(242 242 247 / 40%);
+  --color-accent:        #2fbfae;
+  --color-accent-hover:  color-mix(in srgb, var(--color-accent) 92%, white);
+  --color-on-accent:     #041210;
+  --color-success:       #3ecf8e;
+  --color-warning:       #f5b544;
+  --color-danger:        #ef5f6b;
+
+  /* ── Espaciado (base 4 — cerrado) ── */
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+  --space-9: 96px;
+
+  /* ── Radios ── */
+  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px;
+  --radius-xl: 24px; --radius-pill: 999px;
+
+  /* ── Tipografía (fuente SIEMPRE cargada con next/font o @font-face) */
+  --font-sans: "Inter", system-ui, sans-serif; /* ← la que diga la referencia */
+  --fs-caption: 12px/1.3;  --fs-body-sm: 13px/1.5; --fs-body: 15px/1.5;
+  --fs-body-lg: 16px/1.6;  --fs-h3: 19px/1.3;      --fs-h2: 24px/1.25;
+  --fs-h1: 40px/1.1;
+  --fw-regular: 400; --fw-medium: 500; --fw-semibold: 600; --fw-bold: 700;
+
+  /* ── Motion (tiempos y easings de fábrica) ── */
+  --dur-instant: 80ms;  --dur-fast: 150ms;  --dur-base: 220ms;
+  --dur-slow: 320ms;    --dur-page: 450ms;
+  --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:  cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── Profundidad ── */
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 6%);
+  --shadow-md: 0 4px 12px rgb(0 0 0 / 8%);
+  --shadow-lg: 0 12px 32px rgb(0 0 0 / 12%);
+  --blur-cristal: 16px;
+
+  /* ── Z-index (cerrado) ── */
+  --z-base: 0; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200;
+  --z-overlay: 300; --z-modal: 400; --z-toast: 500;
+}
+
+/* Estados estándar de botón (md = 44px de alto; tocar con la referencia) */
+.btn { min-height: 44px; padding-inline: var(--space-4); border-radius: var(--radius-md);
+       font: var(--fw-semibold) 15px/1 var(--font-sans); transition: all var(--dur-fast) var(--ease-out); }
+.btn:hover  { filter: brightness(1.06); }
+.btn:active { transform: scale(0.98); }
+.btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.btn:disabled { opacity: 0.45; pointer-events: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

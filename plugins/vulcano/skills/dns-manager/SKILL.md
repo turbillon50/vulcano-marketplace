@@ -13,7 +13,14 @@ El dominio base se agrega automaticamente. Si pones el dominio completo, crea un
 
 ## Credenciales
 User: turbillon50@gmail.com
-Token: en Hetzner /home/secrets/global/.env (NAMECOM_TOKEN)
+Token y usuario vigentes: en Hetzner `/root/.env` (`NAMECOM_TOKEN`, `NAMECOM_USER`; `NAMECOM_USERNAME` es alias). Nunca mostrar valores ni copiarlos a prompts. No usar respaldos de credenciales como fuente principal.
+
+## Arranque obligatorio — sin volver a descubrir lo conocido
+1. Abrir esta skill y ejecutar `bash /root/.claude/skills/dns-manager/verificar.sh` para confirmar lectura (la prueba NO demuestra permisos de escritura).
+2. Consultar NS autoritativos y records del dominio específico, confirmar si está en la cuenta y revisar conflictos/duplicados antes de cambiar.
+3. Para CNAME usar host relativo, valor exacto y DNS-only si hay proxy; no modificar registros ajenos. Conservar DMARC válido.
+4. Escribir únicamente mediante una acción de DNS autorizada y verificable. Si los controles de ejecución bloquean la escritura, NO rodearlos usando scripts encubiertos; reportar el bloqueo y usar integración oficial o panel del proveedor.
+5. Releer los registros por API y consultar DNS autoritativo; después repetir verificación en Clerk. Sin confirmación, estado PENDIENTE.
 
 ## API Base
 https://api.name.com/v4
